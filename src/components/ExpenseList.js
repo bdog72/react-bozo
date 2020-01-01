@@ -10,7 +10,14 @@ const ExpenseList = ({ expenses, clearItems, handleEdit, handleDelete }) => {
     <>
       <ul className="list">
         {expenses.map(expense => {
-          return <ExpenseItem key={expense.id} expense={expense} />;
+          return (
+            <ExpenseItem
+              key={expense.id}
+              expense={expense}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+            />
+          );
         })}
       </ul>
       {expenses.length > 0 && (
